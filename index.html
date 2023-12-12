@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <div id="quiz-form-container">
+            <h2>Cadastro</h2>
+            <form id="cadastro-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" required>
+                <button type="button" onclick="iniciarQuiz()">Iniciar Quiz</button>
+            </form>
+        </div>
+        <div id="quiz-questions-container" style="display: none;">
+            <h2>Quiz</h2>
+            <div id="question-container"></div>
+            <div id="options-container"></div>
+            <button onclick="proximo()">Próxima</button>
+            <div id="timer">Tempo restante: 05:00</div>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
