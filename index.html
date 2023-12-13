@@ -41,7 +41,7 @@
         #quiz-logo {
             max-width: 100%;
             height: auto;
-            margin-bottom: 20px; /* Adjust margin as needed */
+            margin-bottom: 20px;
         }
 
         label {
@@ -59,16 +59,20 @@
             border-radius: 4px;
         }
 
-        button {
+        .quiz-button {
             background-color: #4caf50;
             color: white;
             padding: 12px;
             border: none;
             cursor: pointer;
             border-radius: 4px;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 10px;
+            display: inline-block;
         }
 
-        button:hover {
+        .quiz-button:hover {
             background-color: #45a049;
         }
 
@@ -82,8 +86,9 @@
                 width: 100%;
             }
 
-            button {
+            .quiz-button {
                 width: 100%;
+                max-width: none;
             }
         }
     </style>
@@ -98,14 +103,14 @@
                 <input type="text" id="nome" required>
                 <label for="matricula">Matrícula:</label>
                 <input type="text" id="matricula" required>
-                <button type="button" onclick="iniciarQuiz()">Iniciar Quiz</button>
+                <button type="button" class="quiz-button" onclick="iniciarQuiz()">Iniciar Quiz</button>
             </form>
         </div>
         <div id="quiz-questions-container" style="display: none;">
             <h2>Quiz</h2>
             <div id="question-container"></div>
             <div id="options-container"></div>
-            <button onclick="proximo()">Próxima</button>
+            <button class="quiz-button" onclick="concluirQuiz()">Concluir</button>
             <div id="timer">Tempo restante: 05:00</div>
         </div>
     </div>
