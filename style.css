@@ -15,14 +15,17 @@ body {
     text-align: center;
 }
 
-/* Updated color to dark green */
 #quiz-form-container,
 #quiz-questions-container {
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: rgba(0, 100, 0, 0.9);
     border-radius: 8px;
+}
+
+/* Updated color to dark green */
+#quiz-questions-container {
+    background-color: rgba(0, 100, 0, 0.9);
 }
 
 #cadastro-form,
