@@ -21,7 +21,7 @@ body {
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Adiciona uma cor de fundo sem obscurecer muito a imagem de fundo */
+    background-color: rgba(37, 150, 10, 0.8); /* Adiciona uma cor de fundo sem obscurecer muito a imagem de fundo */
 }
 
 #cadastro-form,
