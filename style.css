@@ -2,11 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('https://www.guimaconseco.com.br/images/footer-img.jpg'); /* Substitua pela URL da sua imagem de fundo no Google Drive */
+    background-image: url('https://www.guimaconseco.com.br/images/footer-img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 #quiz-container {
     max-width: 600px;
