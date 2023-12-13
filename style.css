@@ -23,9 +23,9 @@ body {
     border-radius: 8px;
 }
 
-/* Updated color to dark green */
 #quiz-questions-container {
     background-color: rgba(0, 100, 0, 0.9);
+    color: #fff; /* Added text color */
 }
 
 #cadastro-form,
@@ -34,7 +34,6 @@ body {
     margin: auto;
 }
 
-/* Updated color to dark green */
 h2 {
     color: #006400;
 }
