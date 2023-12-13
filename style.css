@@ -6,13 +6,13 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff;
 }
 
 #quiz-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     text-align: center;
-    color: white; /* Cor do texto para melhor legibilidade no fundo escuro */
 }
 
 #quiz-form-container,
@@ -20,33 +20,38 @@ body {
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo mais claro para melhor contraste */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
 }
 
 #cadastro-form,
 #quiz-questions-container {
-    max-width: 400px;
+    max-width: 600px;
     margin: auto;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
+    color: #333;
 }
 
 input {
-    width: 100%;
-    padding: 8px;
+    width: calc(100% - 16px);
+    padding: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
     background-color: #4caf50;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 button:hover {
@@ -56,5 +61,14 @@ button:hover {
 #timer {
     font-size: 18px;
     margin-top: 10px;
-    color: white; /* Cor do texto para melhor legibilidade no fundo escuro */
+}
+
+@media screen and (max-width: 600px) {
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
 }
