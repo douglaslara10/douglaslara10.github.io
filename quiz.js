@@ -80,7 +80,7 @@ function finalizarQuiz() {
 
 function enviarDadosParaPlanilha(nome, matricula, pontuacao, tempo) {
     // Crie uma URL de destino no formato do seu script do Google Apps Script
-    const urlScriptAppsScript = 'https://script.google.com/a/macros/guimaconseco.com.br/s/AKfycbxvLJex9G_LxdiyKhb8rM-gM0twjSFTIqZGB7xujP9px3H5zfCuAXpY9INeudh5k54L2Q/exec'; // Substitua pela sua URL
+    const urlScriptAppsScript = 'https://script.google.com/macros/s/AKfycby5xl-6j7I5vH8upSXw3CHipX2-on86rEGpzG6hCEn99IYeknZGkvx8v_kjhVw4wanLzg/exec'; // Substitua pela sua URL
 
     // Construa o corpo da requisição
     const data = {
