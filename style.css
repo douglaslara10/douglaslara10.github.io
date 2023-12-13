@@ -28,6 +28,10 @@ body {
     color: #fff; /* Added text color */
 }
 
+#quiz-questions-container h2 {
+    color: #006400; /* Set the color for h2 within quiz-questions-container */
+}
+
 #cadastro-form,
 #quiz-questions-container {
     max-width: 600px;
