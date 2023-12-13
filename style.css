@@ -25,7 +25,7 @@ body {
 
 #quiz-questions-container {
     background-color: rgba(0, 100, 0, 0.9);
-    color: #fff; /* Added text color */
+    color: #000; /* Added text color */
 }
 
 #quiz-questions-container h2 {
