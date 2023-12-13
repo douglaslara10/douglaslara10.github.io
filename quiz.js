@@ -1,6 +1,7 @@
 let currentQuestion = 0;
 let score = 0;
 let timer;
+let segundosRestantes; // Declare a variável aqui
 
 const questions = [
     {
@@ -90,6 +91,8 @@ function enviarDadosParaPlanilha(nome, matricula, pontuacao, tempo) {
         tempo: tempo
     };
 
+    console.log('Dados a serem enviados:', data);
+
     // Faça uma requisição HTTP POST usando Fetch API
     fetch(urlScriptAppsScript, {
         method: 'POST',
@@ -107,9 +110,8 @@ function enviarDadosParaPlanilha(nome, matricula, pontuacao, tempo) {
     });
 }
 
-
 function iniciarTempo() {
-    let segundosRestantes = 300; // 5 minutos
+    segundosRestantes = 300; // 5 minutos
     timer = setInterval(() => {
         const minutos = Math.floor(segundosRestantes / 60);
         const segundos = segundosRestantes % 60;
