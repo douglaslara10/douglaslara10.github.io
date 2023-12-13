@@ -80,7 +80,7 @@ function finalizarQuiz() {
 
 function enviarDadosParaPlanilha(nome, matricula, pontuacao, tempo) {
     // Crie uma URL de destino no formato do seu script do Google Apps Script
-    const urlScriptAppsScript = 'URL_DO_SEU_SCRIPT_APPS_SCRIPT'; // Substitua pela sua URL
+    const urlScriptAppsScript = 'https://script.google.com/a/macros/guimaconseco.com.br/s/AKfycbxvLJex9G_LxdiyKhb8rM-gM0twjSFTIqZGB7xujP9px3H5zfCuAXpY9INeudh5k54L2Q/exec'; // Substitua pela sua URL
 
     // Construa o corpo da requisição
     const data = {
