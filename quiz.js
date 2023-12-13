@@ -1,7 +1,6 @@
 let currentQuestion = 0;
 let score = 0;
 let timer;
-let segundosRestantes; // Declare a variável aqui
 
 const questions = [
     {
@@ -66,52 +65,11 @@ function verificarResposta(resposta) {
 
 function finalizarQuiz() {
     pararTempo();
-
-    // Obtenha os dados do quiz
-    const nome = document.getElementById("nome").value;
-    const matricula = document.getElementById("matricula").value;
-    const pontuacao = score;
-    const tempo = 300 - segundosRestantes;
-
-    // Envie os dados para o Google Sheets
-    enviarDadosParaPlanilha(nome, matricula, pontuacao, tempo);
-
     alert(`Quiz finalizado!\nPontuação: ${score}/${questions.length}`);
 }
 
-function enviarDadosParaPlanilha(nome, matricula, pontuacao, tempo) {
-    // Crie uma URL de destino no formato do seu script do Google Apps Script
-    const urlScriptAppsScript = 'https://script.google.com/macros/s/AKfycby5xl-6j7I5vH8upSXw3CHipX2-on86rEGpzG6hCEn99IYeknZGkvx8v_kjhVw4wanLzg/exec'; // Substitua pela sua URL
-
-    // Construa o corpo da requisição
-    const data = {
-        nome: nome,
-        matricula: matricula,
-        pontuacao: pontuacao,
-        tempo: tempo
-    };
-
-    console.log('Dados a serem enviados:', data);
-
-    // Faça uma requisição HTTP POST usando Fetch API
-    fetch(urlScriptAppsScript, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log('Dados enviados com sucesso:', data);
-    })
-    .catch(error => {
-        console.error('Erro ao enviar dados:', error);
-    });
-}
-
 function iniciarTempo() {
-    segundosRestantes = 300; // 5 minutos
+    let segundosRestantes = 300; // 5 minutos
     timer = setInterval(() => {
         const minutos = Math.floor(segundosRestantes / 60);
         const segundos = segundosRestantes % 60;
