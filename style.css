@@ -1,11 +1,18 @@
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background-image: url('https://drive.google.com/file/d/1I5kPrqoa_ZUqlyVNr08oqFut2C2QHx5_/view?usp=drive_link'); /* Substitua pela URL da sua imagem de fundo no Google Drive */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #quiz-container {
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
+    color: white; /* Adiciona cor de texto branca para melhor legibilidade no fundo escuro */
 }
 
 #quiz-form-container,
@@ -13,6 +20,7 @@ body {
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adiciona uma cor de fundo sem obscurecer muito a imagem de fundo */
 }
 
 #cadastro-form,
@@ -48,4 +56,5 @@ button:hover {
 #timer {
     font-size: 18px;
     margin-top: 10px;
+    color: white; /* Adiciona cor de texto branca para melhor legibilidade no fundo escuro */
 }
