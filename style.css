@@ -13,7 +13,7 @@ body {
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
-    color: white; /* Adiciona cor de texto branca para melhor legibilidade no fundo escuro */
+    color: black; /* Adiciona cor de texto branca para melhor legibilidade no fundo escuro */
 }
 
 #quiz-form-container,
@@ -57,5 +57,5 @@ button:hover {
 #timer {
     font-size: 18px;
     margin-top: 10px;
-    color: white; /* Adiciona cor de texto branca para melhor legibilidade no fundo escuro */
+    color: black; /* Adiciona cor de texto branca para melhor legibilidade no fundo escuro */
 }
