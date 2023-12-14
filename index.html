@@ -1,117 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('https://www.guimaconseco.com.br/images/footer-img.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #fff;
-        }
-
-        #quiz-container {
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: center;
-        }
-
-        #quiz-form-container,
-        #quiz-questions-container {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-        }
-
-        #cadastro-form,
-        #quiz-questions-container {
-            max-width: 600px;
-            margin: auto;
-        }
-
-        #quiz-logo {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        input {
-            width: calc(100% - 16px);
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .quiz-button {
-            background-color: #4caf50;
-            color: white;
-            padding: 12px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-            width: 100%;
-            max-width: 200px;
-            margin: 0 auto 10px;
-            display: inline-block;
-        }
-
-        .quiz-button:hover {
-            background-color: #45a049;
-        }
-
-        #timer {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-        @media screen and (max-width: 600px) {
-            input {
-                width: 100%;
-            }
-
-            .quiz-button {
-                width: 100%;
-                max-width: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Quiz</title>
 </head>
 <body>
-    <div id="quiz-container">
-        <img src="https://www.guimaconseco.com.br/images/logo.png" alt="Logo" id="quiz-logo">
-        <div id="quiz-form-container">
-            <h2>Cadastro</h2>
-            <form id="cadastro-form">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" required>
-                <label for="matricula">Matrícula:</label>
-                <input type="text" id="matricula" required>
-                <button type="button" class="quiz-button" onclick="iniciarQuiz()">Iniciar Quiz</button>
-            </form>
-        </div>
-        <div id="quiz-questions-container" style="display: none;">
-            <h2>Quiz</h2>
-            <div id="question-container"></div>
-            <div id="options-container"></div>
-            <div id="timer">Tempo restante: 05:00</div>
-        </div>
+  <div id="admin-container">
+    <label for="admin-password">Digite a senha de administrador:</label>
+    <input type="password" id="admin-password" />
+    <button onclick="adminLogin()">Login de Administrador</button>
+    <button onclick="startQuizForAll()" disabled>Iniciar Quiz para Todos</button>
+  </div>
+
+  <div id="login-container" style="display: none;">
+    <label for="username">Digite seu nome de usuário:</label>
+    <input type="text" id="username" />
+    <button onclick="userLogin()">Login de Usuário</button>
+  </div>
+
+  <div id="quiz-container" style="display: none;">
+    <h1>Quiz</h1>
+    <div id="question-container">
+      <p id="question">Qual é a capital do Brasil?</p>
     </div>
-    <script src="quiz.js"></script>
+    <div id="answer-buttons" class="btn-container">
+    </div>
+    <button id="next-button" class="btn" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
