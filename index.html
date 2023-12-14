@@ -7,7 +7,16 @@
   <title>Quiz</title>
 </head>
 <body>
-  <div id="admin-container">
+  <div id="register-container">
+    <h2>Cadastro</h2>
+    <label for="register-username">Nome de Usuário:</label>
+    <input type="text" id="register-username" />
+    <label for="register-password">Senha:</label>
+    <input type="password" id="register-password" />
+    <button onclick="register()">Cadastrar</button>
+  </div>
+
+  <div id="admin-container" style="display: none;">
     <label for="admin-password">Digite a senha de administrador:</label>
     <input type="password" id="admin-password" />
     <button onclick="adminLogin()">Login de Administrador</button>
@@ -17,6 +26,8 @@
   <div id="login-container" style="display: none;">
     <label for="username">Digite seu nome de usuário:</label>
     <input type="text" id="username" />
+    <label for="password">Senha:</label>
+    <input type="password" id="password" />
     <button onclick="userLogin()">Login de Usuário</button>
   </div>
 
