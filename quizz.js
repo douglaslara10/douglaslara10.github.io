@@ -1,4 +1,4 @@
-let adminPassword = 'adminSenha'; // Defina a senha do administrador aqui
+let adminPassword = '1234'; // Defina a senha do administrador aqui
 let isAdminLoggedIn = false;
 let isQuizStarted = false;
 let currentUser = null;
