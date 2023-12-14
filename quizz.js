@@ -1,15 +1,73 @@
-let adminPassword = '1234'; // Defina a senha do administrador aqui
+let adminPassword = 'adminSenha'; // Defina a senha do administrador aqui
 let isAdminLoggedIn = false;
 let isQuizStarted = false;
 let currentUser = null;
 let isLoggedIn = false;
+let score = 0;
+let currentQuestionIndex = 0;
 
+const registerContainer = document.getElementById('register-container');
 const adminContainer = document.getElementById('admin-container');
 const loginContainer = document.getElementById('login-container');
 const quizContainer = document.getElementById('quiz-container');
 const questionContainer = document.getElementById('question-container');
 const answerButtons = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-button');
+
+let users = [];
+const questions = [
+  {
+    question: 'Qual é a capital do Brasil?',
+    answers: [
+      { text: 'Rio de Janeiro', correct: false },
+      { text: 'Brasília', correct: true },
+      { text: 'São Paulo', correct: false },
+      { text: 'Belo Horizonte', correct: false }
+    ]
+  },
+  {
+    question: 'Quantos planetas existem em nosso sistema solar?',
+    answers: [
+      { text: '7', correct: false },
+      { text: '8', correct: true },
+      { text: '9', correct: false },
+      { text: '10', correct: false }
+    ]
+  },
+  // Adicione mais perguntas conforme necessário
+];
+
+function register() {
+  const registerUsernameInput = document.getElementById('register-username');
+  const registerPasswordInput = document.getElementById('register-password');
+
+  const username = registerUsernameInput.value.trim();
+  const password = registerPasswordInput.value;
+
+  if (username === '' || password === '') {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+
+  // Verifica se o usuário já existe
+  if (users.find(user => user.username === username)) {
+    alert('Este nome de usuário já está em uso. Por favor, escolha outro.');
+    return;
+  }
+
+  // Adiciona o usuário ao array de usuários
+  users.push({ username, password });
+
+  // Limpa os campos de registro
+  registerUsernameInput.value = '';
+  registerPasswordInput.value = '';
+
+  // Esconde o formulário de registro
+  registerContainer.style.display = 'none';
+
+  // Exibe o formulário de login
+  loginContainer.style.display = 'block';
+}
 
 function adminLogin() {
   const adminPasswordInput = document.getElementById('admin-password');
@@ -48,10 +106,15 @@ function userLogin() {
   }
 
   const usernameInput = document.getElementById('username');
-  const username = usernameInput.value.trim();
+  const passwordInput = document.getElementById('password');
 
-  if (username === '') {
-    alert('Por favor, insira um nome de usuário válido.');
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value;
+
+  const user = users.find(user => user.username === username && user.password === password);
+
+  if (!user) {
+    alert('Nome de usuário ou senha incorretos. Por favor, tente novamente.');
     return;
   }
 
