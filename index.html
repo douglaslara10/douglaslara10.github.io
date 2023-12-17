@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <title>Quiz</title>
-</head>
-<body>
-  <div class="container" id="register-container">
-    <h2>Cadastro</h2>
-    <label for="register-username">Nome de Usuário:</label>
-    <input type="text" id="register-username" />
-    <label for="register-password">Senha:</label>
-    <input type="password" id="register-password" />
-    <button onclick="register()">Cadastrar</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizz Programação</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Quizz de Programação</h1>
+      </header>
+      <main>
+        <!-- QUIZZ CONTAINER -->
+        <div id="quizz-container">
+          <p id="question">
+            <span id="question-number">1</span> &#8212;
+            <span id="question-text">Qual é a unidade de medida para metros?</span>
+          </p>
+          <div id="answers-box">
+            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          </div>
+        </div>
 
-  <div class="container" id="admin-container" style="display: none;">
-    <label for="admin-password">Digite a senha de administrador:</label>
-    <input type="password" id="admin-password" />
-    <button onclick="adminLogin()">Login de Administrador</button>
-    <button onclick="startQuizForAll()" disabled>Iniciar Quiz para Todos</button>
-  </div>
+        <!-- SCORE BOARD -->
+        <div id="score-container" class="hide">
+          <h2>Parabéns</h2>
+          <p id="display-score"><span>90</span>%</p>
+          <p>
+            Você acertou <span id="correct-answers">0</span> de
+            <span id="questions-qty">10</span> perguntas
+          </p>
+          <button id="restart">Refazer quizz!</button>
+        </div>
 
-  <div class="container" id="login-container" style="display: none;">
-    <h2>Login</h2>
-    <label for="username">Digite seu nome de usuário:</label>
-    <input type="text" id="username" />
-    <label for="password">Senha:</label>
-    <input type="password" id="password" />
-    <button onclick="userLogin()">Login de Usuário</button>
-  </div>
-
-  <div class="container" id="quiz-container" style="display: none;">
-    <h1>Quiz</h1>
-    <div id="question-container">
-      <p id="question">Qual é a capital do Brasil?</p>
+        <!-- TEMPLATE RESPOSTA -->
+        <button class="answer-template hide">
+          <span class="btn-letter"></span> <span class="question-answer"></span>
+        </button>
+      </main>
+      <footer>
+        <p>
+          <strong>Copyright</strong> &copy; 2020
+          <a href="https://github.com/lucianesantcs/"><strong>Luciane Santos</strong></a> /
+          <a href="https://www.linkedin.com/in/matheusbattisti/"
+            ><strong>Matheus Battisti</strong></a
+          >
+        </p>
+      </footer>
     </div>
-    <div id="answer-buttons" class="btn-container">
-    </div>
-    <button id="next-button" class="btn" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+  </body>
 </html>
